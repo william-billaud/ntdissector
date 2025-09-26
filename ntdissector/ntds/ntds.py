@@ -448,7 +448,7 @@ class NTDS:
                 res["Primary:WDigest"] = list()
                 try:
                     wDigestCreds = WDIGEST_CREDENTIALS(creds.split(unhexlify("0100000001000000e80100000600000001000000e0010000"))[1])
-                except:
+                except Exception as e:
                     logging.error("__formatSupplementalCredentialsInfo (ADAM) : %s" % e)
                     return
                 for j in range(wDigestCreds["NumberOfHashes"]):
