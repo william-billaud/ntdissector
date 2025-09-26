@@ -760,7 +760,7 @@ class NTDS:
         stats = dict()
 
         def __reduce(record):
-            return {"page_num": record._node.tag.page.num, "page_buf": bytes(record._node.tag.page.buf), "node_num": record._node.num}
+            return {"page_num": int(record._node.tag.page.num), "page_buf": bytes(record._node.tag.page.buf), "node_num": int(record._node.num)}
 
         workersQ = mp.Queue()
         workerLock = mp.Lock()
